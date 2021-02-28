@@ -16,7 +16,7 @@ public class Pickup : MonoBehaviour
         if (collision.tag == "Player")
         {
             orbCounter.orbCollected();
-            orb.gameObject.active = false;
+            orb.gameObject.SetActive(false);
         }
 
     }
