@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class LevelComplete : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject LevelCompleteMenu;
     public void LevelCompleted()
     {
-
+        Debug.Log("LevelCompleted");
+        Time.timeScale = 0;
+        LevelCompleteMenu.SetActive(true);
     }
 }
