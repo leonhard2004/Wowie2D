@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3551567003257855156
-    second: platformLeft
+    second: pixelarts_0
   - first:
       213: -6273054680629635838
     second: pixelarts_1
@@ -13,7 +13,7 @@ TextureImporter:
     second: pixelarts_2
   - first:
       213: -5247048356817819848
-    second: pixelarts_3
+    second: player_sprite
   - first:
       213: 7282710490665195782
     second: pixelarts_4
@@ -23,6 +23,15 @@ TextureImporter:
   - first:
       213: 8545712474918400377
     second: pixelarts_6
+  - first:
+      213: 8703731376370791923
+    second: pixelarts_7
+  - first:
+      213: 942719829599628569
+    second: pixelarts_8
+  - first:
+      213: 3746665748059907069
+    second: pixelarts_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,11 +129,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: platformLeft
+      name: pixelarts_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 336
+        y: 1000
         width: 160
         height: 160
       alignment: 0
@@ -152,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 168
-        y: 336
+        y: 1000
         width: 160
         height: 160
       alignment: 0
@@ -177,7 +186,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
-        y: 336
+        y: 1000
         width: 160
         height: 160
       alignment: 0
@@ -203,13 +212,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixelarts_3
+      name: player_sprite
       rect:
         serializedVersion: 2
-        x: 0
-        y: 168
-        width: 160
-        height: 160
+        x: 504
+        y: 768
+        width: 312
+        height: 392
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +242,10 @@ TextureImporter:
       name: pixelarts_4
       rect:
         serializedVersion: 2
-        x: 168
-        y: 168
-        width: 160
-        height: 160
+        x: 824
+        y: 768
+        width: 184
+        height: 392
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,22 +267,29 @@ TextureImporter:
       name: pixelarts_5
       rect:
         serializedVersion: 2
-        x: 336
-        y: 168
+        x: 0
+        y: 832
         width: 160
         height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: 50.898163, y: 72.61212}
-        - {x: 43, y: 80}
-        - {x: -80, y: 80}
+      outline:
+      - - {x: -43, y: 80}
+        - {x: -57, y: 68}
+        - {x: -73, y: 52}
+        - {x: -80, y: 43}
         - {x: -80, y: -80}
         - {x: 80, y: -80}
-        - {x: 80, y: 43}
-        - {x: 69.510284, y: 54.122406}
+        - {x: 80, y: 80}
+      physicsShape:
+      - - {x: -43, y: 80}
+        - {x: -57, y: 68}
+        - {x: -73, y: 52}
+        - {x: -80, y: 43}
+        - {x: -80, y: -80}
+        - {x: 80, y: -80}
+        - {x: 80, y: 80}
       tessellationDetail: 0.38
       bones: []
       spriteID: a3e928945e7cebe90800000000000000
@@ -286,8 +302,8 @@ TextureImporter:
       name: pixelarts_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 168
+        y: 832
         width: 160
         height: 160
       alignment: 0
@@ -303,6 +319,76 @@ TextureImporter:
       bones: []
       spriteID: 971b2240838789670800000000000000
       internalID: 8545712474918400377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelarts_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 832
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 61, y: 67}
+        - {x: 43, y: 80}
+        - {x: -80, y: 80}
+        - {x: -80, y: -80}
+        - {x: 80, y: -80}
+        - {x: 80, y: 43}
+        - {x: 74, y: 53}
+      tessellationDetail: 0.36
+      bones: []
+      spriteID: 3f5b00d829dd9c870800000000000000
+      internalID: 8703731376370791923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelarts_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 664
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91da006b0b6351d00800000000000000
+      internalID: 942719829599628569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelarts_9
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 320
+        width: 248
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3eb3da5a4def330800000000000000
+      internalID: 3746665748059907069
       vertices: []
       indices: 
       edges: []
