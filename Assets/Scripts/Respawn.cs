@@ -13,6 +13,9 @@ public class Respawn : MonoBehaviour
         {
           
             player.transform.position = respawnPoint.transform.position;
+            player.GetComponent<MarioMovement>().StopMoving();
+            //TODO: respawnAnimation
+            player.GetComponent<MarioMovement>().StartMoving();
         }
         
     }
