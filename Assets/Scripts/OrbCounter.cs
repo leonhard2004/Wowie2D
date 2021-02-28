@@ -18,6 +18,7 @@ public class OrbCounter : MonoBehaviour
         gefundeneOrbs++;
         if(gefundeneOrbs == gesamtOrbs)
         {
+            Debug.Log("Orbscollected");
             player.GetComponent<LevelComplete>().LevelCompleted();
         }
     }
