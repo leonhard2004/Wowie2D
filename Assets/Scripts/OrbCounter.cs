@@ -6,6 +6,7 @@ public class OrbCounter : MonoBehaviour
 {
     private int gesamtOrbs = 0;
     private int gefundeneOrbs = 0;
+    public GameObject player;
 
     public void addOrb()
     {
@@ -15,6 +16,10 @@ public class OrbCounter : MonoBehaviour
     {
         Debug.Log("Orb aufgenommen");
         gefundeneOrbs++;
+        if(gefundeneOrbs == gesamtOrbs)
+        {
+            player.GetComponent<LevelComplete>().LevelCompleted();
+        }
     }
     private void Update()
     {
