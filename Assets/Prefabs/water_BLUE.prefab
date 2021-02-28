@@ -96,8 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd4450c33f238e4da1b6bc4a034ae44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  respawnPoint: {fileID: 0}
+  player: {fileID: 825526662349614474, guid: 444f4da859a23634a873177db04ba7dd, type: 3}
+  respawnPoint: {fileID: 1882418594140722080, guid: 1d84fd14259c9254e96eeb924b4726e9,
+    type: 3}
 --- !u!61 &710651882072194343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108,7 +109,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

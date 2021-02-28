@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 4723844786165797433, guid: b218adad849c86d43a1607680c95aa13,
         type: 3}
       propertyPath: m_Name
-      value: water_YELLOW
+      value: water_YELLOW Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5865240945314736909, guid: b218adad849c86d43a1607680c95aa13,
         type: 3}
@@ -77,11 +77,13 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 825526662349614474, guid: 444f4da859a23634a873177db04ba7dd,
+        type: 3}
     - target: {fileID: 9148368090241743066, guid: b218adad849c86d43a1607680c95aa13,
         type: 3}
       propertyPath: respawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6678974155290777271, guid: c40fd79a12bd0af46a4f8a89da0daab6,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b218adad849c86d43a1607680c95aa13, type: 3}

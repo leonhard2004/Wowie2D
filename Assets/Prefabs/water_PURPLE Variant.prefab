@@ -11,12 +11,14 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 825526662349614474, guid: 444f4da859a23634a873177db04ba7dd,
+        type: 3}
     - target: {fileID: 703964377017311836, guid: c28a0789d5b559b479a2737e46b617e5,
         type: 3}
       propertyPath: respawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7095415606280340084, guid: c9dd24a6390c0b84d80ccf0cf0b6f413,
+        type: 3}
     - target: {fileID: 2762102958530916747, guid: c28a0789d5b559b479a2737e46b617e5,
         type: 3}
       propertyPath: m_RootOrder

@@ -11,11 +11,11 @@ public class Respawn : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-          
+            Debug.Log("respawn");
             player.transform.position = respawnPoint.transform.position;
-            player.GetComponent<MarioMovement>().StopMoving();
+            //player.GetComponent<MarioMovement>().StopMoving();
             //TODO: respawnAnimation
-            player.GetComponent<MarioMovement>().StartMoving();
+            //player.GetComponent<MarioMovement>().StartMoving();
         }
         
     }
