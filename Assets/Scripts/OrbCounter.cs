@@ -7,18 +7,20 @@ public class OrbCounter : MonoBehaviour
     private int gesamtOrbs = 0;
     private int gefundeneOrbs = 0;
     public GameObject player;
-
+    public AudioSource pickupsound;
     public void addOrb()
     {
         gesamtOrbs++;
+        
     }
     public void orbCollected()
     {
         Debug.Log("Orb aufgenommen");
         gefundeneOrbs++;
-        if(gefundeneOrbs == gesamtOrbs)
+        pickupsound.Play();
+        if (gefundeneOrbs == gesamtOrbs)
         {
-            Debug.Log("Orbscollected");
+            Debug.Log("allOrbscollected");
             player.GetComponent<LevelComplete>().LevelCompleted();
         }
     }

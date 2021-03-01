@@ -596,7 +596,7 @@ PrefabInstance:
     - target: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
         type: 3}
       propertyPath: m_Text
-      value: TITLE
+      value: DWARF RUN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}

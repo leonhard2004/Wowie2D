@@ -5,23 +5,34 @@ using UnityEngine.InputSystem;
 public class Pause : MonoBehaviour
 {
     bool paused = false;
+    bool gameEnded = false;
     public GameObject pauseMenu;
 
     public void OnPause()
     {
         paused = !paused;
+        pauseMenu.SetActive(paused);
+    }
+
+    public void PauseGame()
+    {
+        gameEnded = true;
     }
     private void Update()
     {
+        if (gameEnded)
+        {
+            paused = true;
+        }
         if (paused)
         {
             Time.timeScale = 0;
-            pauseMenu.SetActive(true);
+           
         }
         else
         {
             Time.timeScale = 1;
-            pauseMenu.SetActive(false);
+            
         }
     }
 

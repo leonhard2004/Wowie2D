@@ -31,11 +31,15 @@ public class MarioMovement : MonoBehaviour
     //You will need a rigidbody to apply forces for jumping, in this case I am using Rigidbody 2D because we are trying to emulate Mario :)
     private Rigidbody2D rb;
     public bool canMove;
+    public AudioSource jumpAudioSource;
+    public AudioSource hitAudioSource;
+    Vector3 pos;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+      
         jumpTimeCounter = jumpTime;
         canMove = true;
     }
@@ -51,8 +55,18 @@ public class MarioMovement : MonoBehaviour
             //the jumpcounter is whatever we set jumptime to in the editor.
             jumpTimeCounter = jumpTime;
         }
-
-        UpdatePlayerPosition();
+        if (canMove)
+        {
+            UpdatePlayerPosition();
+        }
+        
+        if (canMove == false)
+        {
+            
+            transform.localPosition = pos;
+            
+        }
+       
     }
 
     void FixedUpdate()
@@ -70,7 +84,8 @@ public class MarioMovement : MonoBehaviour
                     //jump!
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                     stoppedJumping = false;
-                    
+
+                    jumpAudioSource.Play();
                 }
             }
 
@@ -166,13 +181,24 @@ public class MarioMovement : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "damage")
+        {
+            hitAudioSource.Play();
+        }
+    }
     public void StopMoving()
     {
+        Debug.Log("stopmoving");
         canMove = false;
         rb.velocity = new Vector3(0, 0, 0);
+        pos = transform.localPosition;
+
     }
     public void StartMoving()
     {
+        Debug.Log("startmoving");
         canMove = true;
     }
 }

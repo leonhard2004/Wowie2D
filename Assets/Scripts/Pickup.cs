@@ -17,6 +17,7 @@ public class Pickup : MonoBehaviour
         {
             orbCounter.orbCollected();
             orb.gameObject.SetActive(false);
+            Debug.Log("deactivate Orb");
         }
 
     }
