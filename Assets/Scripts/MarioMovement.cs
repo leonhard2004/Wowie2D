@@ -17,7 +17,7 @@ public class MarioMovement : MonoBehaviour
      * the layermask lets you select a layer to be ground; you will need to create a layer named ground(or whatever you like) and assign your
      * ground objects to this layer.
      * The stoppedJumping bool lets us track when the player stops jumping.*/
-    public bool grounded;
+    public bool isGrounded;
     public LayerMask whatIsGround;
     public bool stoppedJumping;
 
@@ -25,7 +25,8 @@ public class MarioMovement : MonoBehaviour
      * Add an empty game object as a child of your player and position it at your feet, where you touch the ground.
      * the float groundCheckRadius allows you to set a radius for the groundCheck, to adjust the way you interact with the ground*/
 
-    public Transform groundCheck;
+    public Transform groundCheckPoint;
+    public Transform groundCheckPoint2;
     public float groundCheckRadius;
 
     //You will need a rigidbody to apply forces for jumping, in this case I am using Rigidbody 2D because we are trying to emulate Mario :)
@@ -48,9 +49,9 @@ public class MarioMovement : MonoBehaviour
     void Update()
     {
         //determines whether our bool, grounded, is true or false by seeing if our groundcheck overlaps something on the ground layer
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround) || Physics2D.OverlapCircle(groundCheckPoint2.position, groundCheckRadius, whatIsGround);
         //if we are grounded...
-        if (grounded)
+        if (isGrounded)
         {
             //the jumpcounter is whatever we set jumptime to in the editor.
             jumpTimeCounter = jumpTime;
@@ -66,55 +67,11 @@ public class MarioMovement : MonoBehaviour
             transform.localPosition = pos;
             
         }
-       
+        
+
     }
 
-    void FixedUpdate()
-    {
-        if (canMove)
-        {
-            //I placed this code in FixedUpdate because we are using phyics to move.
-
-            //if you press down the mouse button...
-            if (jump)
-            {
-                //and you are on the ground...
-                if (grounded)
-                {
-                    //jump!
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    stoppedJumping = false;
-
-                    jumpAudioSource.Play();
-                }
-            }
-
-            //if you keep holding down the mouse button...
-            if (jump && !stoppedJumping)
-            {
-                //and your counter hasn't reached zero...
-                if (jumpTimeCounter > 0)
-                {
-                    //keep jumping!
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    jumpTimeCounter -= Time.deltaTime;
-                }
-                else if(jumpTimeCounter <= 0)
-                {
-                    jump = false;
-                }
-            }
-
-
-            //if you stop holding down the mouse button...
-            if (!jump)
-            {
-                //stop jumping and set your counter to zero.  The timer will reset once we touch the ground again in the update function.
-                jumpTimeCounter = 0;
-                stoppedJumping = true;
-            }
-        }
-    }
+   
 
     void UpdatePlayerPosition()
     {
@@ -136,6 +93,43 @@ public class MarioMovement : MonoBehaviour
                 scale.x = 1;
             }
 
+            if (jump)
+            {
+                //and you are on the ground...
+                if (isGrounded)
+                {
+                    //jump!
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    stoppedJumping = false;
+
+                    jumpAudioSource.Play();
+                }
+            }
+
+            //if you keep holding down the mouse button...
+            if (jump && !stoppedJumping)
+            {
+                //and your counter hasn't reached zero...
+                if (jumpTimeCounter > 0)
+                {
+                    //keep jumping!
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    jumpTimeCounter -= Time.deltaTime;
+                }
+                else if (jumpTimeCounter <= 0)
+                {
+                    jump = false;
+                }
+            }
+
+
+            //if you stop holding down the mouse button...
+            if (!jump)
+            {
+                //stop jumping and set your counter to zero.  The timer will reset once we touch the ground again in the update function.
+                jumpTimeCounter = 0;
+                stoppedJumping = true;
+            }
         }
 
         transform.localPosition = pos;
@@ -170,7 +164,7 @@ public class MarioMovement : MonoBehaviour
     {
         float jumping = value.Get<float>();
 
-        if (jumping == 1 && grounded)
+        if (jumping == 1 && isGrounded)
         {
             jump = true;
         }
